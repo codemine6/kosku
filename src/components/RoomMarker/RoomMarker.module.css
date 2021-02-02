@@ -1,0 +1,27 @@
+.popup {
+    margin: .8rem;
+}
+.popup button {
+    color: #fff;
+    background: #01cc9d;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    padding: .3rem .5rem;
+    margin-top: .8rem;
+}
+
+.detail {
+    display: flex;
+}
+.detail img {
+    width: 4rem;
+    margin-right: .8rem;
+}
+.detail p {
+    font-size: .9rem;
+    font-weight: bold;
+    font-family: 'Quicksand';
+    white-space: nowrap;
+    margin: 0;
+}

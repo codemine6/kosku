@@ -1,0 +1,33 @@
+.container {
+    margin: 5rem 1.5rem 1.5rem;
+}
+
+/* Main */
+.main {
+    display: flex;
+}
+.main img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+/* Detail */
+.detail {
+    margin: 1rem 0;
+}
+.detail span {
+    color: #555;
+}
+
+/* List */
+.list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+.list > div {
+    width: calc(50% - .5rem);
+}

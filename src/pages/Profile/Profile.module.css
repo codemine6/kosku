@@ -1,0 +1,42 @@
+.container {
+    margin: 4rem 1.5rem 1.5rem;
+}
+
+/* Main */
+.main {
+    display: flex;
+}
+.main img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+}
+.main p {
+    color: #555;
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+.main button {
+    color: #fff;
+    font-size: .7rem;
+    font-family: inherit;
+    background: #01cc9d;
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    padding: .3rem .5rem;
+    margin-top: .8rem;
+}
+
+/* Detail */
+.detail {
+    margin: 2rem 0;
+}
+.detail p {
+    line-height: 1.5rem;
+    font-size: .8rem;
+}
+.detail span {
+    color: #555;
+}
