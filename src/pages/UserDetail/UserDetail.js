@@ -31,24 +31,23 @@ export default function UserDetail() {
     return (
         <>
             <Navbar/>
-            {user && <div className={styles.container}>
-                <div className={styles.main}>
-                    <img src={user.profilePhoto ?? 'https://placeimg.com/100/100/people'} alt=""/>
-                    <div>
-                        <h3>{user.username}</h3>
-                        <p>{user.userType === 'owner' ? 'Pemilik kost' : 'Penyewa kost'}</p>
-                    </div>
+            {user && <>
+            <div className={styles.main}>
+                <img src={user.profilePhoto ?? 'https://placeimg.com/100/100/people'} alt=""/>
+                <div>
+                    <h3>{user.username}</h3>
+                    <p>{user.userType === 'owner' ? 'Pemilik kost' : 'Penyewa kost'}</p>
                 </div>
-                <div className={styles.detail}>
-                    <p>Email: <span>{user.email}</span></p>
-                    <p>Phone: <span>{user.phone}</span></p>
-                </div>
-                <h3>Kost</h3>
-                {rooms && <div className={styles.list}>
-                    {rooms.map(room => (
-                        <RoomCard room={room} key={room.id}/>
-                    ))}
-                </div>}
+            </div>
+            <div className={styles.detail}>
+                <p>Email: <span>{user.email}</span></p>
+                <p>Phone: <span>{user.phone}</span></p>
+            </div></>}
+            <h3>Kost</h3>
+            {rooms && <div className={styles.list}>
+                {rooms.map(room => (
+                    <RoomCard room={room} key={room.id}/>
+                ))}
             </div>}
             {loading && <Loader/>}
         </>

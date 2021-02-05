@@ -8,7 +8,7 @@ export function AuthRoute({children, ...rest}) {
 
     return auth !== undefined ? (
         <Route {...rest} render={({location}) =>
-            !auth ? children : <Redirect to={{pathname: '/', state: {from: location}}}/>
+            !auth ? children : <Redirect to={location.state?.from.pathname ?? '/'}/>
         }/>
     ) : <Loader/>
 }
@@ -18,7 +18,7 @@ export function CustomerRoute({children, ...rest}) {
 
     return auth !== undefined ? (
         <Route {...rest} render={({location}) =>
-            auth ? (auth.userType === 'customer' ? children : <Redirect to={{pathname: '/404', state: {from: location}}}/>)
+            auth ? (auth.userType === 'customer' ? children : <Redirect to='/404'/>)
             : <Redirect to={{pathname: '/login', state: {from: location}}}/>
         }/>
     ) : <Loader/>
@@ -29,7 +29,7 @@ export function OwnerRoute({children, ...rest}) {
 
     return auth !== undefined ? (
         <Route {...rest} render={({location}) =>
-            auth ? (auth.userType === 'owner' ? children : <Redirect to={{pathname: '/404', state: {from: location}}}/>)
+            auth ? (auth.userType === 'owner' ? children : <Redirect to='/404'/>)
             : <Redirect to={{pathname: '/login', state: {from: location}}}/>
         }/>
     ) : <Loader/>

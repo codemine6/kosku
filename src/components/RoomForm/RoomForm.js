@@ -1,6 +1,7 @@
 import {useFormContext} from 'contexts/RoomFormContext'
 import styles from './RoomForm.module.css'
 
+import RoomMenu from 'components/RoomMenu/RoomMenu'
 import ImageInput from 'components/ImageInput/ImageInput'
 import FacilitiesForm from 'components/FacilitiesForm/FacilitiesForm'
 import LocationForm from 'components/LocationForm/LocationForm'
@@ -9,16 +10,24 @@ import PricingForm from 'components/PricingForm/PricingForm'
 export default function RoomForm() {
     const {form, dispatch} = useFormContext()
 
+    function setRoomType(type) {
+        dispatch({type: 'SET_ROOM_TYPE', payload: type})
+    }
+
     function setName(e) {
         dispatch({type: 'SET_NAME', payload: e.target.value})
     }
 
-    function setTenantType(e) {
-        dispatch({type: 'SET_TENANT_TYPE', payload: e.target.value})
+    function setCustomerType(e) {
+        dispatch({type: 'SET_CUSTOMER', payload: e.target.value})
     }
 
     return (
         <div className={styles.form}>
+            <label>Tipe</label>
+            <div className={styles.type}>
+                <RoomMenu default={form.roomType} onChange={setRoomType}/>
+            </div>
             <label>Name</label>
             <input type="text" placeholder="Nama kost" value={form.name} onChange={setName}/>
 
@@ -26,10 +35,10 @@ export default function RoomForm() {
             <FacilitiesForm/>
 
             <label>Tipe</label>
-            <div className={styles.type}>
+            <div className={styles.customer}>
                 {['all', "male", 'female'].map((item, i) => (
                     <div key={i}>
-                        <input id={i} type="radio" name="type" value={item} checked={item === form.tenantType} onChange={setTenantType}/>
+                        <input id={i} type="radio" name="type" value={item} checked={item === form.tenantType} onChange={setCustomerType}/>
                         <label htmlFor={i}>{item === 'all' && 'Campur'}{item === 'male' && 'Putra'}{item === 'female' && 'Putri'}</label>
                     </div>
                 ))}

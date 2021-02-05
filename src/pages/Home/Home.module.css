@@ -1,5 +1,5 @@
 .title {
-    margin: 1rem;
+    margin: 0 1rem;
 }
 .promo {
     height: 13rem;
@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: space-between;
     padding: .5rem .5rem .5rem 1rem;
-    margin: 0 1rem;
+    margin: 0 1rem 1rem;
 }
 .add p {
     color: #fff;
@@ -50,7 +50,7 @@
 .list {
     overflow: scroll;
     white-space: nowrap;
-    margin: .5rem 0;
+    padding: 1rem 0;
 }
 .list > div {
     width: calc(50% - 1.5rem);
@@ -70,7 +70,7 @@
 /* Cities */
 .cities {
     display: flex;
-    margin: 1rem;
+    margin: 0 1rem;
 }
 .cities > div {
     position: relative;

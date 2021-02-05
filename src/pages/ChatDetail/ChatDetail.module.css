@@ -16,7 +16,7 @@
     background: #fff;
     border-radius: .5rem;
     box-shadow: 0 0 1rem #0002;
-    position: fixed;
+    position: absolute;
     padding: .3rem;
 }
 .menu p {

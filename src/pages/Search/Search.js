@@ -5,7 +5,7 @@ import styles from './Search.module.css'
 
 import NavbarHome from 'components/NavbarHome/NavbarHome'
 import SearchForm from 'components/SearchForm/SearchForm'
-import SearchMenu from 'components/SearchMenu/SearchMenu'
+import RoomMenu from 'components/RoomMenu/RoomMenu'
 import RoomCard from 'components/RoomCard/RoomCard'
 import Loader from 'components/Loader/Loader'
 
@@ -13,6 +13,10 @@ export default function Search() {
     const [rooms, setRooms] = useState([])
     const [loading, setLoading] = useState(false)
     let history = useHistory()
+
+    function changeType(type) {
+        console.log(type)
+    }
 
     function getSearch(query) {
         setLoading(true)
@@ -29,7 +33,7 @@ export default function Search() {
             <NavbarHome/>
             <div className={styles.sticky}>
                 <SearchForm onSearch={getSearch}/>
-                <SearchMenu/>
+                <RoomMenu onChange={changeType}/>
                 {rooms.length > 0 && <h4>Results: {rooms.length}</h4>}
             </div>
             <button className={styles.nearest} onClick={() => history.push('/nearest')}>Kost Disekitarmu..</button>

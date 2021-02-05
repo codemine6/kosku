@@ -15,9 +15,9 @@ export default function RoomCard({room}) {
             <img src={room.images[0]} alt=""/>
             <div className={styles.detail}>
                 <div className={styles.type}>
-                    {room.tenantType === 'all' && <span className={styles.all}>Campur</span>}
-                    {room.tenantType === 'male' && <span className={styles.male}>Putra</span>}
-                    {room.tenantType === 'female' && <span className={styles.female}>Putri</span>}
+                    {room.customerType === 'all' && <span className={styles.all}>Campur</span>}
+                    {room.customerType === 'male' && <span className={styles.male}>Putra</span>}
+                    {room.customerType === 'female' && <span className={styles.female}>Putri</span>}
                 </div>
                 <p className={styles.name}>{room.name}</p>
                 <div className={styles.location}>

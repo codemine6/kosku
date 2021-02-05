@@ -25,8 +25,8 @@ export default function Sidebar(props) {
             <div className={styles.sidebar}>
                 {auth &&
                 <div className={styles.profile}>
-                    <img src={auth.profilePhoto ?? "https://placeimg.com/100/100/people"} alt=""/>
-                    <h3 onClick={() => history.push('/profile')}>{auth.username}</h3>
+                    <img src={auth.profilePhoto ?? "https://placeimg.com/100/100/people"} alt="" onClick={() => history.push('/profile')}/>
+                    <h3>{auth.username}</h3>
                     <p className={styles.status}>{auth.userType === 'owner' ? 'Pemilik Kost' : 'Pencari Kost'}</p>
                 </div>}
 

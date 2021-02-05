@@ -15,7 +15,8 @@ export default function RoomMarker({room}) {
                     <div className={styles.detail}>
                         <img src={room.images[0]} alt=""/>
                         <div>
-                            <p>{room.name}</p>
+                            <h3>{room.name}</h3>
+                            <p>Rp. {room.pricing.price.toLocaleString()}</p>
                         </div>
                     </div>
                     <button>Detail</button>

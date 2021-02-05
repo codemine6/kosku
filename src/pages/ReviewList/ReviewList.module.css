@@ -15,6 +15,7 @@
     border-bottom: .1rem solid #eee;
     outline: none;
     padding: .5rem;
+    cursor: pointer;
 }
 .selected {
     color: #01cc9d;

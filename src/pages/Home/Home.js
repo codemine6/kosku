@@ -8,7 +8,7 @@ import {ChevronBottom, ChevronTop} from 'Icons'
 import NavbarHome from 'components/NavbarHome/NavbarHome'
 import Carousel from 'components/Carousel/Carousel'
 import SearchForm from 'components/SearchForm/SearchForm'
-import SearchMenu from 'components/SearchMenu/SearchMenu'
+import RoomMenu from 'components/RoomMenu/RoomMenu'
 import RoomCard from 'components/RoomCard/RoomCard'
 import Loader from 'components/Loader/Loader'
 
@@ -27,6 +27,10 @@ export default function Home() {
     function changeCity(e) {
         setCity(e)
         setRoomsAround(allRooms.filter(room => room.location.city === e))
+    }
+
+    function changeType(type) {
+        console.log(type)
     }
 
     useEffect(() => {
@@ -63,7 +67,7 @@ export default function Home() {
             </div>
             <div className={styles.sticky}>
                 <div onClick={() => history.push('/search')}><SearchForm/></div>
-                <SearchMenu/>
+                <RoomMenu onChange={changeType}/>
             </div>
             <div className={styles.add}>
                 <p>Anda Pemilik Kost?</p>

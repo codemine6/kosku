@@ -1,3 +1,8 @@
+/* Type */
+.type {
+    margin: .5rem 0 1rem;
+}
+
 /* Form */
 .form > input[type=text], .form > input[type=number], .form > textarea {
     width: 100%;
@@ -10,22 +15,22 @@
     margin: .5rem 0;
 }
 
-/* Type */
-.type {
+/* Customer */
+.customer {
     display: flex;
     justify-content: space-around;
     margin: 1rem 0 1.5rem;
 }
-.type div {
+.customer div {
     position: relative;
 }
-.type input {
+.customer input {
     display: none;
 }
-.type label {
+.customer label {
     margin-left: 1.5rem;
 }
-.type label::before {
+.customer label::before {
     content: '';
     width: 1rem;
     height: 1rem;
@@ -35,7 +40,7 @@
     position: absolute;
     transition: .3s;
 }
-.type label::after {
+.customer label::after {
     content: '';
     width: .6rem;
     height: .6rem;
@@ -47,10 +52,10 @@
     transform: scale(0);
     transition: .3s;
 }
-.type input:checked + label::before {
+.customer input:checked + label::before {
     border: .1rem solid #01cc9d;
 }
-.type input:checked + label::after {
+.customer input:checked + label::after {
     transform: scale(1);
 }
 

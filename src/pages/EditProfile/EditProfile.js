@@ -32,19 +32,17 @@ export default function EditProfile() {
     return (
         <>
             <Navbar/>
-            <div className={styles.container}>
-                <div className={styles.main}>
-                    <div className={styles.image}>
-                        <img src={profilePhoto ?? "https://placeimg.com/100/100/people"} alt=""/>
-                        <label htmlFor="input"><Camera/></label>
-                        <input id="input" type="file" accept="image/*" onChange={changeImage}/>
-                    </div>
-                    <div className={styles.detail}>
-                        <input value={username} onChange={e => setUsername(e.target.value)}/>
-                    </div>
+            <div className={styles.main}>
+                <div className={styles.image}>
+                    <img src={profilePhoto ?? "https://placeimg.com/100/100/people"} alt=""/>
+                    <label htmlFor="input"><Camera/></label>
+                    <input id="input" type="file" accept="image/*" onChange={changeImage}/>
                 </div>
-                <Button onClick={saveProfile}>Simpan</Button>
+                <div className={styles.detail}>
+                    <input value={username} onChange={e => setUsername(e.target.value)}/>
+                </div>
             </div>
+            <Button id={styles.save} onClick={saveProfile}>Simpan</Button>
             {loading && <Loader/>}
         </>
     )

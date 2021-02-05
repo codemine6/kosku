@@ -33,9 +33,9 @@ export default function RoomDetailMain({room, rating}) {
         <div className={styles.main}>
             {auth && auth.id !== room.owner && <i className={styles.chatLink} onClick={goChat}><Chat/></i>}
             <div className={styles.type}>
-                {room.tenantType === 'all' && <h4 className={styles.all}>Kost Campur</h4>}
-                {room.tenantType === 'male' && <h4 className={styles.male}>Kost Putra</h4>}
-                {room.tenantType === 'female' && <h4 className={styles.female}>Kost Putri</h4>}
+                {room.customerType === 'all' && <h4 className={styles.all}>Kost Campur</h4>}
+                {room.customerType === 'male' && <h4 className={styles.male}>Kost Putra</h4>}
+                {room.customerType === 'female' && <h4 className={styles.female}>Kost Putri</h4>}
             </div>
             <h3>{room.name}</h3>
             <div className={styles.rating}>

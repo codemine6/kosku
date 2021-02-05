@@ -39,6 +39,7 @@
 /* Map */
 .map {
     width: 100%;
+    max-width: inherit;
     top: 0;
     bottom: 0;
     position: fixed;

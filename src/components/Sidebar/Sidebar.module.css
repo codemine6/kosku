@@ -22,6 +22,7 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 .profile h3 {
     font-weight: bold;
@@ -33,6 +34,9 @@
 }
 
 /* Menu */
+.menu {
+    margin: 1rem 0;
+}
 .menu li {
     color: #aaa;
     font-size: .9rem;
@@ -60,7 +64,7 @@
 .other li {
     color: #aaa;
     list-style: none;
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: bold;
     display: flex;
     align-items: center;

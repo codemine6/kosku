@@ -18,9 +18,8 @@ export default function Login() {
     function handleLogin() {
         if (email && password) {
             setLoading(true)
-            useAuth.signInWithEmailAndPassword(email, password).then(() => {
-                history.push('/')
-            }).catch(err => {
+            useAuth.signInWithEmailAndPassword(email, password)
+            .catch(err => {
                 setLoading(false)
                 setMessage(err.message)
             })

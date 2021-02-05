@@ -1,5 +1,6 @@
 .map {
     width: 100%;
+    max-width: inherit;
     top: 0;
     bottom: 0;
     position: fixed;
@@ -14,12 +15,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: absolute;
     padding: .5rem 1rem;
 }
 .detail i {
     width: 1.5rem;
     fill: #01cc9d;
+    cursor: pointer;
 }
 .detail div {
     text-align: center;

@@ -2,6 +2,7 @@ import {useReducer, useEffect, useContext, createContext} from 'react'
 
 const initialState = {
     availableRooms: 0,
+    customerType: 'all',
     description: '',
     facilities: [],
     images: [],
@@ -16,8 +17,7 @@ const initialState = {
         type: 'bulan'
     },
     roomType: 'kost',
-    rules: '',
-    tenantType: 'all'
+    rules: ''
 }
 
 function reducer(state, action) {
@@ -30,6 +30,8 @@ function reducer(state, action) {
             return {...state, location: {...state.location, city: action.payload}}
         case 'SET_COORDS':
             return {...state, location: {...state.location, coords: action.payload}}
+        case 'SET_CUSTOMER':
+            return {...state, customerType: action.payload}
         case 'SET_DESCRIPTION':
             return {...state, description: action.payload}
         case 'SET_FACILITIES':
@@ -42,10 +44,10 @@ function reducer(state, action) {
             return {...state, pricing: {...state.pricing, price: action.payload}}
         case 'SET_PRICING_TYPE':
             return {...state, pricing: {...state.pricing, type: action.payload}}
+        case 'SET_ROOM_TYPE':
+            return {...state, roomType: action.payload}
         case 'SET_RULES':
             return {...state, rules: action.payload}
-        case 'SET_TENANT_TYPE':
-            return {...state, tenantType: action.payload}
         case 'SET_ALL':
             return action.payload
         case 'SET_DEFAULT':
