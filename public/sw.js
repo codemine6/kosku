@@ -16,14 +16,14 @@ workbox.precaching.precacheAndRoute([
     {url: '/icons/logo-192.png', revision}
 ])
 
-// workbox.routing.registerRoute(
-//     ({url}) => url.pathname.includes('static'),
-//     new workbox.strategies.StaleWhileRevalidate({
-//         cacheName: 'assets',
-//         plugins: [
-//             new workbox.expiration.ExpirationPlugin({
-//                 maxAgeSeconds: 60 * 10
-//             })
-//         ]
-//     })
-// )
+workbox.routing.registerRoute(
+    ({url}) => url.pathname.includes('static'),
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'assets',
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxAgeSeconds: 60 * 10
+            })
+        ]
+    })
+)

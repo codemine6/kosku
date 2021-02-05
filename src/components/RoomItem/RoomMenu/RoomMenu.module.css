@@ -9,4 +9,5 @@
 .menu p {
     font-size: .8rem;
     margin: .7rem 1rem;
+    cursor: pointer;
 }

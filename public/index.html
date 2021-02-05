@@ -12,17 +12,7 @@
     <title>Kosku</title>
 </head>
 <body tabindex="-1">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(() => console.log('Registered!'))
-                    .catch(() => console.log('Not Registered!'))
-            })
-        }
-    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 </html>

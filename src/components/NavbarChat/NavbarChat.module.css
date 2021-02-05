@@ -29,9 +29,6 @@
     cursor: pointer;
 }
 .user p {
-    font-weight: bold;
-}
-.user span {
     color: #aaa;
     font-size: .8rem;
 }

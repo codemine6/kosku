@@ -12,6 +12,14 @@ export default function NavbarDetail({name}) {
     let history = useHistory()
     let params = useParams()
 
+    function goBack() {
+        if (history.action === 'REPLACE') {
+            history.go(- (history.length -1))
+        } else {
+            history.goBack()
+        }
+    }
+
     function addFavorite() {
         let data
 
@@ -45,7 +53,7 @@ export default function NavbarDetail({name}) {
 
     return (
         <nav className={styles.navbar}>
-            <i className={styles.iconBack} onClick={() => history.goBack()}><ChevronLeft/></i>
+            <i className={styles.iconBack} onClick={(goBack)}><ChevronLeft/></i>
             <div className={styles.right}>
                 {auth?.userType === 'tenant' && <i className={styles.iconLike} onClick={addFavorite}>{favorited ? <HeartFill/> : <Heart/>}</i>}
                 <i className={styles.iconShare} onClick={goShare}><Share/></i>

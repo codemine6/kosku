@@ -13,8 +13,8 @@ export default function NavChat({user, toggleMenu}) {
             {user && <div className={styles.user}>
                 <img src={user.profilePhoto ?? "https://placeimg.com/100/100/people"} alt="" onClick={() => history.push(`/user/${user.id}`)}/>
                 <div>
-                    <p>{user.username}</p>
-                    <span>{user.onlineStatus}</span>
+                    <h4>{user.username}</h4>
+                    <p>{user.userType === 'owner' ? 'Pemilik kost' : 'Penyewa kost'}</p>
                 </div>
             </div>}
             <i className={styles.more} onClick={toggleMenu}><More/></i>
