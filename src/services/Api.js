@@ -3,17 +3,32 @@ import 'firebase/analytics'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-const firebaseConfig = {
-    apiKey: 'AIzaSyBrGV__XMtPo7HMJxmxQDiKpU8CCMvGUok',
-    authDomain: 'kosku-3cdd1.firebaseapp.com',
-    projectId: 'kosku-3cdd1',
-    storageBucket: 'kosku-3cdd1.appspot.com',
-    messagingSenderId: '327172567751',
-    appId: '1:327172567751:web:79a3a1f4c7fddd1f6784e2',
-    measurementId: 'G-7ZZ4MQTY0P'
+const devConfig = {
+    apiKey: 'AIzaSyA8gs45cLUFDL0bK0De7WVVZ-JxhTaL0x8',
+    authDomain: 'kosku-dev-07022021.firebaseapp.com',
+    projectId: 'kosku-dev-07022021',
+    storageBucket: 'kosku-dev-07022021.appspot.com',
+    messagingSenderId: '962363671156',
+    appId: '1:962363671156:web:e67143d55a7e16c4fc0721',
+    measurementId: 'G-HN2RPB2YC3'
 }
 
-firebase.initializeApp(firebaseConfig)
+const prodConfig = {
+    apiKey: 'AIzaSyC4BJqiqQO4jRHyXbCTs1aOx-D6h0JyyGY',
+    authDomain: 'kosku-prod-07022021.firebaseapp.com',
+    projectId: 'kosku-prod-07022021',
+    storageBucket: 'kosku-prod-07022021.appspot.com',
+    messagingSenderId: '908083899864',
+    appId: '1:908083899864:web:11a236ac1e6724ae2996ad',
+    measurementId: 'G-QNKJN3SFK6'
+}
+
+if (process.env.NODE_ENV === 'development') {
+    firebase.initializeApp(devConfig)
+} else {
+    firebase.initializeApp(prodConfig)
+}
+
 firebase.analytics()
 
 export const useAuth = firebase.auth()

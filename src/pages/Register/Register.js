@@ -26,16 +26,19 @@ export default function Register() {
             useAuth.createUserWithEmailAndPassword(email, password).then(res => {
                 const data = {
                     username, phone, email, password,
-                    emailVerification: true,
+                    emailVerified: false,
                     id: res.user.uid,
                     onlineStatus: 'Online',
                     profilePhoto: null,
                     roomFavorites: [],
                     registerTime: new Date(),
+                    lastSignInTime: new Date(),
                     userType: type
                 }
 
-                useDb.collection('users').doc(data.id).set(data).then(() => history.push('/'))
+                useDb.collection('users').doc(data.id).set(data).then(() => {
+                    history.push('/verification', true)
+                })
             }).catch(err => {
                 setLoading(false)
                 setMessage(err.message)

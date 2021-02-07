@@ -19,7 +19,7 @@ workbox.precaching.precacheAndRoute([
 workbox.routing.registerRoute(
     ({url}) => url.pathname.includes('static'),
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'assets',
+        cacheName: 'kosku-assets',
         plugins: [
             new workbox.expiration.ExpirationPlugin({
                 maxAgeSeconds: 60 * 10

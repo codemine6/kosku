@@ -2,7 +2,7 @@ import {Suspense, lazy} from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import {AuthContextProvider} from 'contexts/AuthContext'
 import {RoomFormContextProvider} from 'contexts/RoomFormContext'
-import {AuthRoute, CustomerRoute, OwnerRoute, ProtectRoute} from 'services/Routes'
+import {CustomerRoute, OwnerRoute, ProtectRoute} from 'services/Routes'
 import Loader from 'components/Loader/Loader'
 
 const AddRoom = lazy(() => import('pages/AddRoom/AddRoom'))
@@ -68,9 +68,9 @@ export default function App() {
                         <CustomerRoute path='/favorites'><Favorites/></CustomerRoute>
                         <CustomerRoute path='/my-booking'><MyBooking/></CustomerRoute>
 
-                        <AuthRoute path='/login'><Login/></AuthRoute>
-                        <AuthRoute path='/register'><Register/></AuthRoute>
-
+                        <Route path='/login'><Login/></Route>
+                        <Route path='/register'><Register/></Route>
+                        <Route path='/verification'><Verification/></Route>
                         <Route path='/' exact><Home/></Route>
                         <Route path='/user/:id'><UserDetail/></Route>
                         <Route path='/room/:id' exact><RoomDetail/></Route>
@@ -80,7 +80,6 @@ export default function App() {
                         <Route path='/promo/:id'><PromoDetail/></Route>
                         <Route path='/search'><Search/></Route>
                         <Route path='/nearest'><NearestLocation/></Route>
-                        <Route path='/verification'><Verification/></Route>
                         <Route path='/recovery'><Recovery/></Route>
                         <Route path='*'><NotFound/></Route>
                     </Switch>

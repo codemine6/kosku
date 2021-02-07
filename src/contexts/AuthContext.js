@@ -13,9 +13,9 @@ export function AuthContextProvider(props) {
 
     useEffect(() => {
         useAuth.onAuthStateChanged(user => {
-            if (user) {
-                useDb.collection('users').where('email', '==', user.email).get().then(res => {
-                    setAuth(res.docs[0]?.data())
+            if (user?.emailVerified) {
+                useDb.collection('users').doc(user.uid).get().then(res => {
+                    setAuth(res.data())
                 })
             } else {
                 setAuth(null)

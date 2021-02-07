@@ -1,0 +1,14 @@
+.center {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.center div {
+    text-align: center;
+}
+.center p {
+    font-size: .8rem;
+    margin: 1rem 0;
+}

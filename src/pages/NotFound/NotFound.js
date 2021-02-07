@@ -5,6 +5,7 @@ import Button from 'components/Button/Button'
 
 export default function NotFound() {
     let history = useHistory()
+    console.log(history)
 
     return (
         <div className={styles.container}>
