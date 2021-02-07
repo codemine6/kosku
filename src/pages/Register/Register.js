@@ -3,10 +3,10 @@ import {useHistory} from 'react-router-dom'
 import {useAuth, useDb} from 'services/Api'
 import styles from './Register.module.css'
 
-import {Facebook, GooglePLus} from 'Icons'
 import {validateEmail, validatePassword, validateUsername} from 'utils/Validation'
 import TextInput from 'components/TextInput/TextInput'
 import Select from 'components/Select/Select'
+import AuthOption from 'components/AuthOption/AuthOption'
 import Button from 'components/Button/Button'
 import Loader from 'components/Loader/Loader'
 
@@ -68,10 +68,7 @@ export default function Register() {
                 <Button onClick={!loading && handleRegister}>Daftar</Button>
 
                 <p>Atau masuk dengan</p>
-                <div className={styles.social}>
-                    <i><Facebook/></i>
-                    <i><GooglePLus/></i>
-                </div>
+                <AuthOption/>
                 <p>Sudah Punya Akun? <b onClick={() => history.replace('/login')}>Masuk Disini</b></p>
             </div>
             {loading && <Loader/>}

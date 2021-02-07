@@ -43,16 +43,6 @@
     font-size: .8rem;
     text-align: center;
 }
-.social {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-}
-.social i {
-    width: 2.5rem;
-    margin: 0 .5rem;
-    cursor: pointer;
-}
 .auth b {
     color: #01cc9d;
     cursor: pointer;

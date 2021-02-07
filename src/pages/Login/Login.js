@@ -4,8 +4,8 @@ import {useAuthContext} from 'contexts/AuthContext'
 import {useAuth, useDb} from 'services/Api'
 import styles from 'pages/Register/Register.module.css'
 
-import {Facebook, GooglePLus} from 'Icons'
 import TextInput from 'components/TextInput/TextInput'
+import AuthOption from 'components/AuthOption/AuthOption'
 import Button from 'components/Button/Button'
 import Loader from 'components/Loader/Loader'
 
@@ -51,10 +51,7 @@ export default function Login() {
                 <Button onClick={!loading && handleLogin}>Masuk</Button>
 
                 <p>Atau masuk dengan</p>
-                <div className={styles.social}>
-                    <i><Facebook/></i>
-                    <i><GooglePLus/></i>
-                </div>
+                <AuthOption/>
                 <p>Belum Punya Akun? <b onClick={() => history.replace('/register')}>Daftar Disini</b></p>
             </div>
             {loading && <Loader/>}
