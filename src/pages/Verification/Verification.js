@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useHistory, useLocation} from 'react-router-dom'
-import {useAuth} from 'services/Api'
+import {useAuth, useDb} from 'services/Api'
 import styles from './Verification.module.css'
 
 import Button from 'components/Button/Button'
@@ -14,6 +14,7 @@ export default function Verification() {
     useEffect(() => {
         if (actionCode) {
             useAuth.applyActionCode(actionCode).then(() => {
+                useDb.collection('users').doc(useAuth.currentUser.uid).set({emailVerified: true}, {merge: true})
                 setVerified(true)
             }).catch(() => {
                 history.replace('/404')
