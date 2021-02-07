@@ -1,14 +1,18 @@
-.center {
-    height: 100vh;
+.container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 2rem;
 }
-.center div {
-    text-align: center;
+.content {
+    width: 80%;
+    position: relative;
+    margin: 10vw 0;
 }
-.center p {
-    font-size: .8rem;
-    margin: 1rem 0;
+.content h2 {
+    border-bottom: .1rem solid #01cc9d;
+    padding-bottom: .8rem;
+    margin-bottom: 1.5rem;
+}
+.content p {
+    font-size: .9rem;
+    margin-bottom: 1rem;
 }
